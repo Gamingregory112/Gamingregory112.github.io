@@ -6,7 +6,17 @@
     <title>YT</title>
 </head>
 <body>
-    <input type="text" id="YWNumber" name="LOL">
-    <button>Update</button>
+    <iframe id="IFrame" name="Window" src="https://www.youtube.com/watch?v=" ></iframe>
+    <input id="number" name="Number" type="text">
+    <input id="button" class="button button1" type="button" value="jump" onclick="javascript:jump()"</input>
+
+    <script type="text/javascript">
+        function jump()
+            {
+                var Number = document.getElementById("number").value;
+                var url = "https://www.youtube.com/watch?v="+number;
+                document.getElementById("IFrame").src = url;
+            }
+    </script>
 </body>
 </html>
