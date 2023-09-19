@@ -1,0 +1,22 @@
+<!DOCTYPE html height=100%;>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT</title>
+</head>
+<body>
+    <iframe id="IFrame" name="Window" src="https://www.youtube.com/embed/rLMHGjoxJdQ" ></iframe>
+    <input id="number" name="Number" type="text">
+    <input id="button" class="button button1" type="button" value="jump" onclick="javascript:jump()"</input>
+
+    <script type="text/javascript">
+        function jump()
+            {
+                var Number = document.getElementById("number").value;
+                document.getElementById("IFrame").src = Number;
+                alert(Number);
+            }
+    </script>
+</body>
+</html>
