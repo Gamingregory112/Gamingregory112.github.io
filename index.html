@@ -49,7 +49,7 @@ w<!DOCTYPE html>
 </head>
 <body>
     
-    <form action="./Finished/index.html" method="post">
+    <form  method="post">
         <div>
             <label for="username">Username</label>
             <input type="text" name="username" placeholder="username">
@@ -82,6 +82,7 @@ w<!DOCTYPE html>
             if ((input[0].value == sessionStorage.getItem("username")) && (input[1].value == sessionStorage.getItem("password")))
             {
                 form.onsubmit = ()=>{return 1}
+                window.location.href = "./Finished/index.html"
                 document.cookie = "username"+input[0];
                 document.cookie = "password"+input[1];
             }
