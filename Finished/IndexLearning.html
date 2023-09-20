@@ -1,0 +1,23 @@
+<!DOCTYPE html width=100%;>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site's Index</title>
+</head>
+<body>
+  <form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">
+  <script>
+      var submit = document.getElementsByTagName('input')[0];
+      submit.onclick = function() {
+          alert("Button pressed!");
+      }
+  </script>
+</form> 
+</body>
+</html>
