@@ -67,8 +67,8 @@
 </html>
 <script type="text/javascript">
     window.onload = ()=>{
-        this.sessionStorage.setItem("username", "spud🎱🎱#p🎱")
-        this.sessionStorage.setItem("password", "🎱")
+        this.sessionStorage.setItem("username", "test1")
+        this.sessionStorage.setItem("password", "test2")
     }
 
     var input = document.getElementsByTagName("input");
@@ -82,16 +82,26 @@
             if ((input[0].value == sessionStorage.getItem("username")) && (input[1].value == sessionStorage.getItem("password")))
             {
                 form.onsubmit = ()=>{return 1}
+                document.cookie = "username"+input[0];
+                document.cookie = "password"+input[1];
             }
             else
             {
-                input[0].nextElementSibling.textContent = "Username or password Inccorect!";
-                input[1].nextElementSibling.textContent = "Username or password Inccorect!";
+               if ((input[0].value != sessionStorage.getItem("username")))
+               {
+                input[0].nextElementSibling.textContent = "Username is incorrect!";
                 setTimeout(() => {
                     input[0].nextElementSibling.textContent = "";
+                }, 2000);
+               } 
+               if ((input[1].value != sessionStorage.getItem("password")))
+               {
+                input[1].nextElementSibling.textContent = "Password is incorrect!";
+                setTimeout(() => {
                     input[1].nextElementSibling.textContent = "";
                 }, 2000);
-            } 
+               } 
+            }
         }
         else
         {
