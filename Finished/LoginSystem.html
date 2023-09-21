@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login System</title>
     <style>
@@ -49,7 +49,7 @@
 </head>
 <body>
     
-    <form action="index.html" method="get">
+    <form action="index.html"  method="get">
         <div>
             <label for="username">Username</label>
             <input type="text" name="username" placeholder="username">
@@ -87,12 +87,20 @@
             }
             else
             {
-               input[0].nextElementSibling.textContent = "Username or password it Incorrect!";
-                input[1].nextElementSibling.textContent = "Username or password it Incorrect!";
+               if ((input[0].value != sessionStorage.getItem("username")))
+               {
+                input[0].nextElementSibling.textContent = "Username is incorrect!";
                 setTimeout(() => {
                     input[0].nextElementSibling.textContent = "";
+                }, 2000);
+               } 
+               if ((input[1].value != sessionStorage.getItem("password")))
+               {
+                input[1].nextElementSibling.textContent = "Password is incorrect!";
+                setTimeout(() => {
                     input[1].nextElementSibling.textContent = "";
                 }, 2000);
+               } 
             }
         }
         else
