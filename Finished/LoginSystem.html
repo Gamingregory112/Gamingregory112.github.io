@@ -82,8 +82,7 @@
             if ((input[0].value == sessionStorage.getItem("username")) && (input[1].value == sessionStorage.getItem("password")))
             {
                 form.onsubmit = ()=>{return 1}
-                document.cookie = "username"+input[0];
-                document.cookie = "password"+input[1];
+                
             }
             else
             {
