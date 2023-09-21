@@ -69,6 +69,8 @@
     window.onload = ()=>{
         this.sessionStorage.setItem("username1", "spud🎱🎱#p🎱")
         this.sessionStorage.setItem("password1", "🎱")
+        this.sessionStorage.setItem("username2", "Admin5839")
+        this.sessionStorage.setItem("password2", "idontneedapassword")
     }
 
     var input = document.getElementsByTagName("input");
@@ -86,21 +88,26 @@
             }
             else
             {
-               if ((input[0].value != sessionStorage.getItem("username1")))
-               {
-                input[0].nextElementSibling.textContent = "Username is incorrect!";
+                input[0].nextElementSibling.textContent = "Username or password Inccorect!";
+                input[1].nextElementSibling.textContent = "Username or password Inccorect!";
                 setTimeout(() => {
                     input[0].nextElementSibling.textContent = "";
-                }, 2000);
-               } 
-               if ((input[1].value != sessionStorage.getItem("password1")))
-               {
-                input[1].nextElementSibling.textContent = "Password is incorrect!";
-                setTimeout(() => {
                     input[1].nextElementSibling.textContent = "";
                 }, 2000);
-               } 
+            } 
+            if ((input[0].value == sessionStorage.getItem("username2")) && (input[1].value == sessionStorage.getItem("password2")))
+            {
+                form.onsubmit = ()=>{return 1}
             }
+            else
+            {
+                input[0].nextElementSibling.textContent = "Username or password Inccorect!";
+                input[1].nextElementSibling.textContent = "Username or password Inccorect!";
+                setTimeout(() => {
+                    input[0].nextElementSibling.textContent = "";
+                    input[1].nextElementSibling.textContent = "";
+                }, 2000);
+            } 
         }
         else
         {
