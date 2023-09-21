@@ -26,6 +26,8 @@
     <button onclick="LogOut()">Log-Out</button>
     <script>
         function LogOut(){
+            var DeviceName = deviceAPI.devicename;
+            Alert(DeviceName)
             window.location.href = "LoginSystem.html"
         }
     </script>
