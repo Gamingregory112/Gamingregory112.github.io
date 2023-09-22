@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System</title>
+    <style>
+        form{
+            width: 600px;
+            margin: 200px auto; 
+        }
+        div{
+            width: 100%;
+            margin: 15px auto;
+        }
+        label{
+            display: block;
+            padding: 20px;
+            font-size: 25px;
+        }
+        input{
+            width: 96%;
+            padding: 10px;
+            border: 1px solid #797979;
+            font-size: 20px;
+            margin-left: 20px;
+            border-radius: 3px;
+        }
+        button{
+            margin: 20px;
+            padding: 10px;
+            width: 100px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            color: whitesmoke;
+            background: linear-gradient(90deg, royalblue, lightgreen); 
+        }
+        span{
+            display: block;
+            margin-left: 20px;
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action=""  method="get">
+        <div>
+            <label for="code">Code:</label>
+            <input type="text" name="code" placeholder="code">
+            <span></span>
+        </div>
+        <button id="log-in">Log-in</button>
+    </form>
+
+</body>
+</html>
+<script type="text/javascript">
+    window.onload = ()=>{
+        this.sessionStorage.setItem("code", "776VBF5BGI8g765f87iGNBDU6ri76BT56ub7gB5F67gn6bTBF7bgf65D6U7D6G6bf67tdn8G67D8nyd7T8DTN8I6tdi56tI8DNG6")
+        this.sessionStorage.setItem("code1", "harry124")
+    }
+
+    var input = document.getElementsByTagName("input");
+    var login = document.getElementById("log-in")
+    var form = document.querySelector("form")
+    form.onsubmit = ()=>{return false}
+
+    login.onclick = ()=>{
+        if ((input[0].value == sessionStorage.getItem("code"))) || (input[0].value == sessionStorage.getItem("code1")))
+            {
+                form.onsubmit = ()=>{return 1}
+                document.cookie = "code"+input[0];
+            }
+            else
+            {
+               if ((input[0].value != sessionStorage.getItem("code")) || (input[0].value != sessionStorage.getItem("code1")))
+               {
+                input[0].nextElementSibling.textContent = "Code is incorrect!";
+                setTimeout(() => {
+                    input[0].nextElementSibling.textContent = "";
+                }, 2000);
+               } 
+            }
+    }
+</script>
