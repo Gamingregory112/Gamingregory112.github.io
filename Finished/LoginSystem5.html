@@ -51,13 +51,8 @@
     
     <form action="index.html"  method="get">
         <div>
-            <label for="username">Username:</label>
-            <input type="text" name="username" placeholder="username">
-            <span></span>
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" name="password" placeholder="password">
+            <label for="code">Code:</label>
+            <input type="text" name="code" placeholder="code">
             <span></span>
         </div>
         <button id="log-in">Log-in</button>
@@ -67,10 +62,8 @@
 </html>
 <script type="text/javascript">
     window.onload = ()=>{
-        var UserArray = ["spud🎱🎱#p🎱", "harry124"]
-        var PassArray = ["🎱", "yrrah#182"]
-        this.sessionStorage.setItem("username", JSON.stringify(UserArray))
-        this.sessionStorage.setItem("password", JSON.stringify(PassArray))
+        var CodeArray = ["1234567890"]
+        this.sessionStorage.setItem("code", JSON.stringify(CodeArray))
     }
 
     var input = document.getElementsByTagName("input");
@@ -79,52 +72,14 @@
     form.onsubmit = ()=>{return false}
 
     login.onclick = ()=>{
-        if ((input[0].value != "") && (input[1].value != "")) 
-        {
-            var storedusers = JSON.parse('[' + sessionStorage.getItem("username") + ']');
-            var i;
-            for (i = 0; i < storedArray.length; i++) {
-                if ((input[0].value == storedusers[i]) && (input[1].value == sessionStorage.getItem("password"))) {}
-            }
-            if ((input[0].value == sessionStorage.getItem("username")) && (input[1].value == sessionStorage.getItem("password"))) {}
-            {
-                form.onsubmit = ()=>{return 1}
-                document.cookie = "username"+input[0];
-                document.cookie = "password"+input[1];
-            }
-            else
-            {
-               if ((input[0].value != sessionStorage.getItem("username")) || (input[0].value != sessionStorage.getItem("username1")))
-               {
-                input[0].nextElementSibling.textContent = "Username is incorrect!";
-                setTimeout(() => {
-                    input[0].nextElementSibling.textContent = "";
-                }, 2000);
-               } 
-               if ((input[1].value != sessionStorage.getItem("password")) || (input[1].value != sessionStorage.getItem("password")))
-               {
-                input[1].nextElementSibling.textContent = "Password is incorrect!";
-                setTimeout(() => {
-                    input[1].nextElementSibling.textContent = "";
-                }, 2000);
-               } 
-            }
-        }
-        else
-        {
-            if (input[0].value == "")
-            {
-                input[0].nextElementSibling.textContent = "Username is empty";
-                setTimeout(() => {
-                    input[0].nextElementSibling.textContent = "";
-                }, 2000);
-            }
-            if (input[1].value == "")
-            {
-                input[1].nextElementSibling.textContent = "Password is empty";
-                setTimeout(() => {
-                    input[1].nextElementSibling.textContent = "";
-                }, 2000);
+        var StoredCodes = JSON.parse('[' + sessionStorage.getItem("code") + ']');
+        var i;
+        for (i = 0; i < StoredCodes.length; i++) {
+            if ((input[0].value == StoredCodes[i])) 
+                {
+                    alert("Yay")
+                    alert(StoredCodes[i])
+                }
             }
         }
     }
