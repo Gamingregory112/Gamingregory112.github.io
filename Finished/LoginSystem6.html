@@ -37,22 +37,19 @@
     LoginFunction(){
         var CodeArray = ["1234567890"]
         this.sessionStorage.setItem("code", JSON.stringify(CodeArray))
-    }
+            
+        var input = document.getElementsByTagName("input");
+        var login = document.getElementById("log-in")
+        var form = document.querySelector("form")
+        form.onsubmit = ()=>{return false}
 
-    var input = document.getElementsByTagName("input");
-    var login = document.getElementById("log-in")
-    var form = document.querySelector("form")
-    form.onsubmit = ()=>{return false}
-
-    login.onclick = ()=>{
-        var StoredCodes = JSON.parse('[' + sessionStorage.getItem("code") + ']');
-        var i;
-        for (i = 0; i < StoredCodes.length; i++) {
-            if ((input[0].value == StoredCodes[i])) 
-                {
-                    alert("Yay")
-                    alert(StoredCodes[i])
-                }
+        login.onclick = ()=>{
+            var StoredCodes = JSON.parse('[' + sessionStorage.getItem("code") + ']');
+            var i;
+            for (i = 0; i < StoredCodes.length; i++) {
+            if ((input[0].value == StoredCodes[i]))
+            {
+                alert(StoredCodes[i])
             }
         }
     }
