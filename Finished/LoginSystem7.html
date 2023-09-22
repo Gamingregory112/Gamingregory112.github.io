@@ -49,7 +49,7 @@
 </head>
 <body>
     
-    <form action="index.html"  method="get">
+    <form action=""  method="get">
         <div>
             <label for="code">Code:</label>
             <input type="text" name="code" placeholder="code">
@@ -72,9 +72,7 @@
     form.onsubmit = ()=>{return false}
 
     login.onclick = ()=>{
-        if ((input[0].value != "") && (input[1].value != "")) 
-        {
-            if ((input[0].value == sessionStorage.getItem("code"))) || (input[0].value == sessionStorage.getItem("code1")))
+        if ((input[0].value == sessionStorage.getItem("code"))) || (input[0].value == sessionStorage.getItem("code1")))
             {
                 form.onsubmit = ()=>{return 1}
                 document.cookie = "code"+input[0];
@@ -89,16 +87,5 @@
                 }, 2000);
                } 
             }
-        }
-        else
-        {
-            if (input[0].value == "")
-            {
-                input[0].nextElementSibling.textContent = "Code is empty";
-                setTimeout(() => {
-                    input[0].nextElementSibling.textContent = "";
-                }, 2000);
-            }
-        }
     }
 </script>
