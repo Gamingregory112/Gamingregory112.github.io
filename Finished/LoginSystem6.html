@@ -30,11 +30,11 @@
 </head>
 <body>
     <input type="text" name="code" placeholder="code">
-    <button>Log in</button>
+    <button onclick="LoginFunction()" >Log in</button>
 </body>
 </html>
 <script type="text/javascript">
-    window.onload = ()=>{
+    LoginFunction(){
         var CodeArray = ["1234567890"]
         this.sessionStorage.setItem("code", JSON.stringify(CodeArray))
     }
