@@ -66,8 +66,15 @@
     var form = document.querySelector("form")
     form.onsubmit = ()=>{return false}
 
+    window.onstorage = event => {
+        if (event.key == "CurrentCode") {
+            localStorage.setItem("CurrentCode", event.newValue)
+        }
+    }
+
     login.onclick = ()=>{
         var UsableCode = localStorage['CurrentCode'];
+
         if ((input[0].value == UsableCode))
             {
                 localStorage.setItem("LoggedIn", "true")
