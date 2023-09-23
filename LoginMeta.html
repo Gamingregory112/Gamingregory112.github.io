@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=”robots” content=”noindex”>
+    <title>Login System</title>
+    <style>
+        form{
+            width: 600px;
+            margin: 200px auto; 
+        }
+        div{
+            width: 100%;
+            margin: 15px auto;
+        }
+        label{
+            display: block;
+            padding: 20px;
+            font-size: 25px;
+        }
+        input{
+            width: 96%;
+            padding: 10px;
+            border: 1px solid #797979;
+            font-size: 20px;
+            margin-left: 20px;
+            border-radius: 3px;
+        }
+        button{
+            margin: 20px;
+            padding: 10px;
+            width: 100px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            color: whitesmoke;
+            background: linear-gradient(90deg, royalblue, lightgreen); 
+        }
+        span{
+            display: block;
+            margin-left: 20px;
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="Home2.html"  method="get">
+        <div>
+            <label for="code">Code:</label>
+            <input type="text" name="code" placeholder="code">
+            <span></span>
+        </div>
+        <button id="log-in">Log-in</button>
+    </form>
+
+</body>
+</html>
+<script type="text/javascript">
+    var input = document.getElementsByTagName("input");
+    var login = document.getElementById("log-in")
+    var form = document.querySelector("form")
+    form.onsubmit = ()=>{return false}
+
+    login.onclick = ()=>{
+        var UsableCode = localStorage['CurrentCode'];
+        if ((input[0].value == UsableCode))
+            {
+                var CodeRnd = (Math.floor(Math.random()*1000000)+1);
+                localStorage.setItem( 'CurrentCode', CodeRnd )
+                alert(CurrentCode)
+                form.onsubmit = ()=>{return 1}
+            }
+            else
+            {
+               if ((input[0].value != sessionStorage.getItem("code")) || (input[0].value != sessionStorage.getItem("code1")))
+               {
+                input[0].nextElementSibling.textContent = "Code is incorrect!";
+                setTimeout(() => {
+                    input[0].nextElementSibling.textContent = "";
+                }, 2000);
+               } 
+            }
+    }
+</script>
