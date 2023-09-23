@@ -1,0 +1,18 @@
+<!DOCTYPE html width=100%>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=”robots” content=”noindex”>
+    <title>🔨ADMIN-PANEL🔨</title>
+</head>
+<body>
+    <button onclick="GenerateCode()">🖨️Auth-Code-Generate🖨️</button>
+</body>
+</html>
+<script>
+    function GenerateCode() {
+        var CodeRnd = (Math.floor(Math.random()*1000000)+1);
+        localStorage.setItem( 'CurrentCode', CodeRnd )
+        alert(CodeRnd)
+      }
+</script>
