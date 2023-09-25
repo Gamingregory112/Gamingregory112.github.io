@@ -80,11 +80,14 @@
     var input = document.getElementsByTagName("input");
     var login = document.getElementById("log-in")
     var form = document.querySelector("form")
+    alert("hi");
     form.onsubmit = ()=>{return false}
-
+    alert("hi");
     async function verifyCode(myCode) {
+        alert("hi");
         let promise = new Promise(function (resolve, reject) {
             let xhr = new XMLHttpRequest();
+            alert("hi");
             xhr.open("GET", "https://crystalline-gray-navy.glitch.me/?code=" + myCode.value);
             xhr.onload = function() {
                 if (xhr.status == 200) {
