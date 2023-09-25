@@ -105,8 +105,11 @@
         })
         // result = await fetch("https://crystalline-gray-navy.glitch.me/?code=" + myCode)
         promise.then(function(response) {
+            alert("5.5")
             console.log(response);
+            alert("5.9")
             if (response === "true") {;
+                alert("PLEASE")
                 localStorage.setItem("LoggedIn", "true")
                 alert("6");
                 localStorage.setItem("StayLoged", "true")
