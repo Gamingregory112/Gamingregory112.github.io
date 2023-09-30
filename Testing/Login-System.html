@@ -90,6 +90,7 @@
             if (response === data.toString()) {
                 localStorage.setItem("LoggedIn", "true")
                 localStorage.setItem("StayLoged", "true")
+                alert("Sending to Game Index")
                 window.location.href = "Game-Index.html"
             } else {
                 myCode.nextElementSibling.textContent = "Code is incorrect!";
