@@ -1,12 +1,12 @@
 var ServerProxyValue = ("MTIzNDU2Nzg5MGJvYg==");
 function getInfo() {
-	var code = document.getElementById('code').value
+	var ClientProxy = document.getElementById('code').value
 	let ServerProxy = atob(ServerProxyValue);
-	if(code == ServerProxy) {
+	if(ClientProxy == ServerProxy) {
 		window.location = "Game-Index.html"
-        localStorage.setItem("LoggedIn", "true")
+		localStorage.setItem("ProxyStatus", "true")
 		return
 	} else {
-		alert("incorrect code");
+		alert("Incorrect");
 	}
 }
