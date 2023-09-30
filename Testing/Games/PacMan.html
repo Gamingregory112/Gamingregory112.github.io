@@ -1,0 +1,20 @@
+<!DOCTYPE html height=100%;>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=”robots” content=”noindex”>
+    <title>Pac Man</title>
+</head>
+<body>
+    <iframe src="https://www.google.com/search?q=pac+man&rlz=1C1GCEA_enUS1020US1020&oq=pac+man&aqs=chrome..69i57j46i131i433i512j0i131i433i512j46i131i433i512j0i131i433i512j46i433i512j0i131i433i512j0i433i512j46i512l2.2709j0j7&sourceid=chrome&ie=UTF-8&surl=1&safe=active&ssui=on#cobssid=s" width=100%; height=100%; frameborder="0" scrolling="no"></iframe>
+</body>
+</html>
+<script>
+    window.onload  = CheckLogIn();
+    function CheckLogIn() {
+      var Loged = localStorage['LoggedIn'];
+      if (Loged != "true") {
+        window.location.href = "../Login-System.html"
+      }
+    }
+</script>
