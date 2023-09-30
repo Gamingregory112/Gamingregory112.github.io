@@ -83,25 +83,12 @@
     var login = document.getElementById("log-in")
     var form = document.querySelector("form")
     form.onsubmit = ()=>{return false}
-    async function verifyCode(myCode) {
-        let promise = new Promise(function (resolve, reject) {
-            let xhr = new XMLHttpRequest();
-            xhr.open("GET", "https://crystalline-gray-navy.glitch.me/?code=" + myCode.value);
-            xhr.onload = function() {
-                if (xhr.status == 200) {
-                    resolve(xhr.response);
-                } else {
-                    reject({
-                        status:this.status
-                    });
-                }
-            }
-            xhr.send();
+    const fs = require('fs')
+        fs.readFile('Input.txt', (err, data) => {
+            if (err) throw err;
+            console.log(data.toString());
         })
-        // result = await fetch("https://crystalline-gray-navy.glitch.me/?code=" + myCode)
-        promise.then(function(response) {
-            console.log(response);
-            if (response === "true") {;
+    if (response === data="file.txt") {;
                 localStorage.setItem("LoggedIn", "true")
                 localStorage.setItem("StayLoged", "true")
                 window.location.href = "Game-Index.html"
@@ -111,8 +98,6 @@
                     input[0].nextElementSibling.textContent = "";
                 }, 2000);
             }
-        }, function(err) {
-        });
     }
 
     login.onclick = ()=>{
