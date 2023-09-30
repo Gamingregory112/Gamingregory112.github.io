@@ -84,11 +84,10 @@
     var form = document.querySelector("form")
     form.onsubmit = ()=>{return false}
     const fs = require('fs')
-        fs.readFile('Input.txt', (err, data) => {
+        fs.readFile('ClientDerectoryScrambler.txt', (err, data) => {
             if (err) throw err;
-            console.log(data.toString());
-        })
-    if (response === data="file.txt") {;
+            alert(data.toString())
+            if (response === data.toString()) {
                 localStorage.setItem("LoggedIn", "true")
                 localStorage.setItem("StayLoged", "true")
                 window.location.href = "Game-Index.html"
@@ -98,7 +97,9 @@
                     input[0].nextElementSibling.textContent = "";
                 }, 2000);
             }
-    }
+        } 
+          
+        })
 
     login.onclick = ()=>{
         verifyCode(input[0]);
