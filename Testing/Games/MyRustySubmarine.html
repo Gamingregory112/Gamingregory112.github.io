@@ -12,7 +12,7 @@
 <script>
     window.onload  = CheckLogIn();
     function CheckLogIn() {
-      var Loged = localStorage['LoggedIn'];
+      var Loged = localStorage['ProxyStatus'];
       if (Loged != "true") {
         window.location.href = "../Login-System.html"
       }
