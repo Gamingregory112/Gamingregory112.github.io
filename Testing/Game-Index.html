@@ -1,0 +1,56 @@
+<!DOCTYPE html width=100%>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=”robots” content=”noindex”>
+    <title>🎮Game-Index🎮</title>
+</head>
+<body>
+    <nav>
+        <button onclick="LogOut()">🔓Log-Out🔓</button>
+        <a href="Games/2048.html">2048</a>
+        <a href="Games/AmongUs.html">Among Us</a>
+        <a href="Games/AppelScratch.html">Appel</a>
+        <a href="Games/BallBlastScratch.html">Ball Blast</a>
+        <a href="Games/BoomerangKidScratch.html">Boomerang Kid</a>
+        <a href="Games/BoxingRandom.html">Boxing Random</a>
+        <a href="Games/DriftBoss.html">Drift Boss</a>
+        <a href="Games/DriveMad.html">Drive Mad</a>
+        <a href="Games/EggyCar.html">Eggy Car</a>
+        <a href="Games/EvoWorld.html">EvoWorld</a>
+        <a href="Games/FlappyBird.html">Flappy Bird</a>
+        <a href="Games/Flip3DScratch.html">Flip 3D</a>
+        <a href="Games/FroggyVolleyScratch.html">Froggy Volley</a>
+        <a href="Games/GeometryDashScratch.html">Geometry Dash</a>
+        <a href="Games/GetawayShootout.html">Getaway Shootout</a>
+        <a href="Games/GettingOverItScratch.html">Getting Over It</a>
+        <a href="Games/GoogleCricket.html">Cricket</a>
+        <a href="Games/HouseOfHazards.html">House Of Hazards</a>
+        <a href="Games/IronSnout.html">Iron Snouts</a>
+        <a href="Games/Little Alchemy2.html">Little Alchemy 2</a>
+        <a href="Games/Murder.html">Murder</a>
+        <a href="Games/MyRustySubmarine.html">My Rusty Submarine</a>
+        <a href="Games/Retro Bowl.html">Retro Bowl</a>
+        <a href="Games/RooftopSniper.html">Rooftop Sniper</a>
+        <a href="Games/Slope.html">Slope</a>
+        <a href="Games/StickmanHook.html">Stickman Hook</a>
+        <a href="Games/TempleRun2.html">Temple Run 2</a>
+        <a href="Games/TetrisScratch.html">Tetris</a>
+        <a href="Games/TheImpossibleQuiz.html">The Impossible Quiz</a>
+        <a href="Games/TowerDefence.html">Tower Defence</a>
+    </nav>
+</body>
+</html>
+<script>
+    window.onload  = CheckLogIn();
+    function LogOut() {
+        window.location.href = "Login-System.html"
+        localStorage.setItem("LoggedIn", "false")
+    }
+    function CheckLogIn() {
+      var Loged = localStorage['LoggedIn'];
+      if (Loged != "true") {
+        window.location.href = "Login-System.html"
+      }
+    }
+</script>
