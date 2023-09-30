@@ -45,10 +45,10 @@
     window.onload  = CheckLogIn();
     function LogOut() {
         window.location.href = "Login-System.html"
-        localStorage.setItem("ProxyStatus", "false")
+        localStorage.setItem("LoggedIn", "false")
     }
     function CheckLogIn() {
-      var Loged = localStorage['ProxyStatus'];
+      var Loged = localStorage['LoggedIn'];
       if (Loged != "true") {
         window.location.href = "Login-System.html"
       }
