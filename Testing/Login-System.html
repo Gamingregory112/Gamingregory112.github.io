@@ -1,133 +1,23 @@
-<!DOCTYPE html width=100%>
-<html lang="en">
-<head>
-    
-    <meta charset="UTF-8">
-    <meta name="robots" content="noindex, follow" />
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>🔒Login🔒</title>
-    <style>
-        form{
-            width: 600px;
-            margin: 200px auto; 
-        }
-        div{
-            width: 100%;
-            margin: 15px auto;
-        }
-        label{
-            display: block;
-            padding: 20px;
-            font-size: 25px;
-        }
-        input{
-            width: 96%;
-            padding: 10px;
-            border: 1px solid #797979;
-            font-size: 20px;
-            margin-left: 20px;
-            border-radius: 3px;
-        }
-        button{
-            margin: 20px;
-            padding: 10px;
-            width: 100px;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 20px;
-            font-weight: bold;
-            color: whitesmoke;
-            background: linear-gradient(90deg, royalblue, lightgreen); 
-        }
-        span{
-            display: block;
-            margin-left: 20px;
-            color: red;
-            font-style: italic;
-        }
-    </style>
-</head>
-<body>
-    <form action="Game-Index.html"  method="get">
-        <div>
-            <label for="code">Code:</label>
-            <input type="text" name="code" placeholder="code">
-            <span></span>
-        </div>
-        <button id="log-in">Log-in</button>
-        <button id="AlreadyLogedbtn" onclick="AlreadyLoged()">Re-Login</button>
-    </form>
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title>Login</title>
+	</head>
+	<body>
+		<form>
+			<input type="text" id="code" placeholder="code">
+			<button type="button" onclick="getInfo()">Click Me</button>
+		</form>
 
-</body>
+		<script src="main.js"></script>
+	</body>
 </html>
-<script type="text/javascript">
-    window.onload = ShowButton()
-    function ShowButton(){
-        document.getElementById('AlreadyLogedbtn').style.visibility='hidden';
-        var StayLoged = localStorage['StayLoged'];
-        if (StayLoged == "true") {
-            document.getElementById('AlreadyLogedbtn').style.visibility='visible';
-        }
-    }
-    function AlreadyLoged(){
-        var StayLoged = localStorage['StayLoged'];
-        if (StayLoged == "true") {
-            localStorage.setItem("LoggedIn", "true")
-            window.location.href = "Game-Index.html"
-        }
-    }
-    var input = document.getElementsByTagName("input");
-    var login = document.getElementById("log-in")
-    var form = document.querySelector("form")
-    alert("1");
-    form.onsubmit = ()=>{return false}
-    alert("2");
-    async function verifyCode(myCode) {
-        alert("3");
-        let promise = new Promise(function (resolve, reject) {
-            let xhr = new XMLHttpRequest();
-            alert("4");
-            xhr.open("GET", "https://crystalline-gray-navy.glitch.me/?code=" + myCode.value);
-            xhr.onload = function() {
-                if (xhr.status == 200) {
-                    resolve(xhr.response);
-                    alert("5");
-                } else {
-                    reject({
-                        status:this.status
-                    });
-                }
-            }
-            alert("new5")
-            xhr.send();
-            alert("5");
-        })
-        // result = await fetch("https://crystalline-gray-navy.glitch.me/?code=" + myCode)
-        promise.then(function(response) {
-            alert("5.5")
-            console.log(response);
-            alert("5.9")
-            if (response === "true") {;
-                alert("PLEASE")
-                localStorage.setItem("LoggedIn", "true")
-                alert("6");
-                localStorage.setItem("StayLoged", "true")
-                window.location.href = "Game-Index.html"
-            } else {
-                myCode.nextElementSibling.textContent = "Code is incorrect!";
-                setTimeout(() => {
-                    alert("7");
-                    input[0].nextElementSibling.textContent = "";
-                }, 2000);
-            }
-        }, function(err) {
-        });
-    }
-
-    login.onclick = ()=>{
-        verifyCode(input[0]);
+<script>
+    window.onload  = CheckLogIn();
+    function CheckLogIn() {
+      var Loged = localStorage['ProxyStatus'];
+      if (Loged == "true") {
+        window.location.href = "Game-Index.html";
+      }
     }
 </script>

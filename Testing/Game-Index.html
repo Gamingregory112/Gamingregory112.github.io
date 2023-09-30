@@ -42,13 +42,13 @@
 </body>
 </html>
 <script>
-   //window.onload  = CheckLogIn();
+    window.onload  = CheckLogIn();
     function LogOut() {
         window.location.href = "Login-System.html"
-        localStorage.setItem("LoggedIn", "false")
+        localStorage.setItem("ProxyStatus", "false")
     }
     function CheckLogIn() {
-      var Loged = localStorage['LoggedIn'];
+      var Loged = localStorage['ProxyStatus'];
       if (Loged != "true") {
         window.location.href = "Login-System.html"
       }
