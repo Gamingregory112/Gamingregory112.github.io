@@ -17,6 +17,7 @@
     window.onload  = CheckLogIn();
     function CheckLogIn() {
 	    var Mode = localStorage['Mode'];
+	    document.getElementById('BackgroundID').style="background-color: "+Mode+";"
 	    var Loged = localStorage['ProxyStatus'];
 	    if (Loged == "true") {
 		    window.location.href = "Game-Index.html";
