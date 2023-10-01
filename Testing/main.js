@@ -5,6 +5,7 @@ function getInfo() {
 	if(ClientProxy == ServerProxy) {
 		window.location = "Game-Index.html"
 		localStorage.setItem("ProxyStatus", "true")
+		localStorage.setItem("AlreadyProxy", "true")
 		return
 	} else {
 		alert("Incorrect");
