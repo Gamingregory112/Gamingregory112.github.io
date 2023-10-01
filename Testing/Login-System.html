@@ -9,19 +9,31 @@
 		<form>
 			<input id="CodeInput" type="text" id="code" placeholder="code">
 			<button id="LoginInput" type="button" onclick="getInfo()">Login</button>
+			<button onclick="LoginFunction()" id="ReLoginInput">Re-Login</button>
 		</form>
 
 		<script src="main.js"></script>
 	</body>
 </html>
 <script>
-    window.onload  = CheckLogIn();
-    function CheckLogIn() {
-	    var Mode = localStorage['Mode'];
-	    document.getElementById('BackgroundID').style="background-color: "+Mode+";"
-	    var Loged = localStorage['ProxyStatus'];
-	    if (Loged == "true") {
-		    window.location.href = "Game-Index.html";
-	    }
-    }
+	var Mode = localStorage['Mode'], Logged = localStorage['ProxyStatus'], HaveLogged = localStorage['ProxyStatus'];
+	window.onload  = CheckLogIn();
+	function CheckLogIn() {
+		document.getElementById('BackgroundID').style="background-color: "+Mode+";"
+		if (HaveLogged == "true) {
+			document.getElementById('CodeInput').style.visibility='hidden';
+			document.getElementById('LoginInput').style.visibility='hidden';
+		        document.getElementById('ReLoginInput').style.visibility='visible';
+	        } else {
+	    	        document.getElementById('CodeInput').style.visibility='visible';
+	    		document.getElementById('LoginInput').style.visibility='visible';
+	    	        document.getElementById('ReLoginInput').style.visibility='hidden';
+	        }
+	if (Logged == "true") {
+		window.location.href = "Game-Index.html";
+	}
+	}
+	function LoginFunction() {
+		if (
+	}
 </script>
