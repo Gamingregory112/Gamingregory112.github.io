@@ -50,6 +50,7 @@
         <a id="link30" href="Games/TowerDefence.html">Tower Defence</a>
         <a id="link31" href="Games/Territorial.html">Territorial.io</a>
         <a id="link32" href="Games/FNAF2.html">FNAF 2</a>
+        <a id="link33" href="Games/PasswordGame.html">Password Game</a>
         <button onclick="LightMode()">Light Mode</button>
         <button onclick="DarkMode()">Dark Mode</button>
     </nav>
@@ -97,6 +98,7 @@
         document.getElementById('link30').style="color: "+ModeText+";"
         document.getElementById('link31').style="color: "+ModeText+";"
         document.getElementById('link32').style="color: "+ModeText+";"
+         document.getElementById('link33').style="color: "+ModeText+";"
         var Loged = localStorage['ProxyStatus'];
         if (Loged != "true") {
             window.location.href = "Login-System.html"
@@ -138,6 +140,7 @@
         document.getElementById('link30').style="color: black;"
         document.getElementById('link31').style="color: black;"
         document.getElementById('link32').style="color: black;"
+        document.getElementById('link33').style="color: black;"
     }
     function DarkMode() {
         localStorage.setItem("Mode", "black")
@@ -175,5 +178,6 @@
         document.getElementById('link30').style="color: white;"
         document.getElementById('link31').style="color: white;"
         document.getElementById('link32').style="color: white;"
+        document.getElementById('link33').style="color: white;"
     }
 </script>
