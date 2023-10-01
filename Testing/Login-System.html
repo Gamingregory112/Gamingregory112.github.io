@@ -39,6 +39,7 @@
 		var HaveLogged = localStorage['AlreadyProxy'];
 		if (HaveLogged == "true") {
 			window.location = "Game-Index.html"
+			localStorage.setItem("ProxyStatus", "true")
 		}
 	}
 </script>
