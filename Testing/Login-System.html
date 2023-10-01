@@ -16,11 +16,17 @@
 	</body>
 </html>
 <script>
-	var Mode = localStorage['Mode'], Logged = localStorage['ProxyStatus'], HaveLogged = localStorage['AlreadyProxy'];
 	window.onload  = CheckLogIn();
 	function CheckLogIn() {
+		var Mode = localStorage['Mode'];
+		var Logged = localStorage['ProxyStatus'];
+		var HaveLogged = localStorage['AlreadyProxy'];
+		if (Logged == "true") {
+			window.location.href = "Game-Index.html";
+		}
 		document.getElementById('BackgroundID').style="background-color: "+Mode+";"
 		if (HaveLogged == "true) {
+		    alert("1");
 			document.getElementById('code').style.visibility='hidden';
 			document.getElementById('LoginInput').style.visibility='hidden';
 		        document.getElementById('ReLoginInput').style.visibility='visible';
@@ -29,11 +35,9 @@
 	    		document.getElementById('LoginInput').style.visibility='visible';
 	    	        document.getElementById('ReLoginInput').style.visibility='hidden';
 	        }
-	if (Logged == "true") {
-		window.location.href = "Game-Index.html";
-	}
 	}
 	function LoginFunction() {
+		var HaveLogged = localStorage['AlreadyProxy'];
 		if (HaveLogged == "true") {
 			window.location = "Game-Index.html"
 		}
