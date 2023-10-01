@@ -5,7 +5,7 @@
     <meta name=”robots” content=”noindex”>
     <title>🎮Game-Index🎮</title>
 </head>
-<body>
+<body id="BackgroundID" style="background-color: white;">
     <nav>
         <button onclick="LogOut()">🔓Log-Out🔓</button>
         <a href="Games/2048.html">2048</a>
@@ -39,6 +39,8 @@
         <a href="Games/TheImpossibleQuiz.html">The Impossible Quiz</a>
         <a href="Games/TowerDefence.html">Tower Defence</a>
         <a href="Games/Territorial.html">Territorial.io</a>
+        <button onclick="LightMode()">Light Mode</button>
+    <button onclick="DarkMode()">Dark Mode</button>
     </nav>
 </body>
 </html>
@@ -49,9 +51,19 @@
         localStorage.setItem("ProxyStatus", "false")
     }
     function CheckLogIn() {
-      var Loged = localStorage['ProxyStatus'];
-      if (Loged != "true") {
-        window.location.href = "Login-System.html"
-      }
+        var Mode = localStorage['Mode'];
+        document.getElementById('BackgroundID').style="background-color: "+Mode+";"
+        var Loged = localStorage['ProxyStatus'];
+        if (Loged != "true") {
+            window.location.href = "Login-System.html"
+        }
+    }
+    function LightMode() {
+        localStorage.setItem("Mode", "white")
+        document.getElementById('BackgroundID').style="background-color: white;"
+    }
+    function DarkMode() {
+        localStorage.setItem("Mode", "black")
+        document.getElementById('BackgroundID').style="background-color: black;"
     }
 </script>
