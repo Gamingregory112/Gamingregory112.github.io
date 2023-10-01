@@ -16,9 +16,10 @@
 <script>
     window.onload  = CheckLogIn();
     function CheckLogIn() {
-      var Loged = localStorage['ProxyStatus'];
-      if (Loged == "true") {
-        window.location.href = "Game-Index.html";
-      }
+	    var Mode = localStorage['Mode'];
+	    var Loged = localStorage['ProxyStatus'];
+	    if (Loged == "true") {
+		    window.location.href = "Game-Index.html";
+	    }
     }
 </script>
