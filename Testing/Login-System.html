@@ -7,7 +7,7 @@
 	</head>
 	<body id="BackgroundID">
 		<form>
-			<input id="CodeInput" type="text" id="code" placeholder="code">
+			<input id="code" type="text" id="code" placeholder="code">
 			<button id="LoginInput" type="button" onclick="getInfo()">Login</button>
 			<button onclick="LoginFunction()" id="ReLoginInput">Re-Login</button>
 		</form>
@@ -21,11 +21,11 @@
 	function CheckLogIn() {
 		document.getElementById('BackgroundID').style="background-color: "+Mode+";"
 		if (HaveLogged == "true) {
-			document.getElementById('CodeInput').style.visibility='hidden';
+			document.getElementById('code').style.visibility='hidden';
 			document.getElementById('LoginInput').style.visibility='hidden';
 		        document.getElementById('ReLoginInput').style.visibility='visible';
 	        } else {
-	    	        document.getElementById('CodeInput').style.visibility='visible';
+	    	        document.getElementById('code').style.visibility='visible';
 	    		document.getElementById('LoginInput').style.visibility='visible';
 	    	        document.getElementById('ReLoginInput').style.visibility='hidden';
 	        }
