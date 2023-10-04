@@ -16,6 +16,13 @@
 </body>
 </html> 
 <script>
+    window.onload  = CheckLogIn();
+    function CheckLogIn() {
+      var Loged = localStorage['ProxyStatus'];
+      if (Loged != "true") {
+        window.location.href = "../Login-System.html"
+      }
+    }
     function YTChange() {
         var VIDEO_ID = document.getElementById('Id').value;
         alert("This is the VIDEO ID you entered ("+VIDEO_ID+")");
