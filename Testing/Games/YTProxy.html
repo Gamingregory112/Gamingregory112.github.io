@@ -13,7 +13,12 @@
         <input onclick="YTChange()" type="button">Update
     </form>
     <div> <iframe id="iFrame"></iframe> </div>
-    <iframe src = "https://www.youtube.com" ></iframe>
+    <form method="get" name="myForm" id="myForm">
+        <a>Please input Site (URL) in the box to the right, Then click Update, After tha have FUN!!</a>
+        <input type="text" name="SiteId" id="SiteId">
+        <input onclick="SiteChange()" type="button">Update
+    </form>
+    <iframe src = "" ></iframe>
 </body>
 </html> 
 <script>
@@ -28,5 +33,10 @@
         var VIDEO_ID = document.getElementById('Id').value;
         alert("This is the VIDEO ID you entered ("+VIDEO_ID+")");
         iFrame.src = "https://www.youtube.com/embed/"+VIDEO_ID
+    }
+    function SiteChange() {
+        var SITE_URL = document.getElementById('SiteId').value;
+        alert("This is the SITE (URL) you entered ("+SITE_URL+")");
+        iFrame.src = SITE_URL
     }
 </script>
