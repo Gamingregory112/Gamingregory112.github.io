@@ -18,7 +18,7 @@
         <input type="text" name="SiteId" id="SiteId">
         <input onclick="SiteChange()" type="button">Update
     </form>
-    <iframe src = "" ></iframe>
+    <iframe id="SiteIFrame" src = "" ></iframe>
 </body>
 </html> 
 <script>
@@ -37,6 +37,6 @@
     function SiteChange() {
         var SITE_URL = document.getElementById('SiteId').value;
         alert("This is the SITE (URL) you entered ("+SITE_URL+")");
-        iFrame.src = SITE_URL
+        SiteIFrame.src = SITE_URL
     }
 </script>
