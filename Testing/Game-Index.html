@@ -19,6 +19,7 @@
 <body id="BackgroundID" style="background-color: white;">
     <nav>
         <button onclick="LogOut()">🔓Log-Out🔓</button>
+        <a id="link" href="Games/Proxy.html">Proxy</a>
         <a id="link0" href="Games/YTProxy.html">Youtube Proxy</a>
         <a id="link1" href="Games/AmongUs.html">Among Us</a>
         <a id="link2" href="Games/DrawaPerfectCircle.html">Draw a Perfect Circle</a>
@@ -68,6 +69,7 @@
         var Mode = localStorage['Mode'];
         var ModeText = localStorage['ModeText'];
         document.getElementById('BackgroundID').style="background-color: "+Mode+";"
+        document.getElementById('link').style="color: "+ModeText+";"
         document.getElementById('link0').style="color: "+ModeText+";"
         document.getElementById('link1').style="color: "+ModeText+";"
         document.getElementById('link2').style="color: "+ModeText+";"
@@ -111,6 +113,7 @@
         localStorage.setItem("Mode", "white")
         localStorage.setItem("ModeText", "black")
         document.getElementById('BackgroundID').style="background-color: white;"
+        document.getElementById('link').style="color: black;"
         document.getElementById('link0').style="color: black;"
         document.getElementById('link1').style="color: black;"
         document.getElementById('link2').style="color: black;"
@@ -150,6 +153,7 @@
         localStorage.setItem("Mode", "black")
         localStorage.setItem("ModeText", "white")
         document.getElementById('BackgroundID').style="background-color: black;"
+        document.getElementById('link').style="color: white;"
         document.getElementById('link0').style="color: white;"
         document.getElementById('link1').style="color: white;"
         document.getElementById('link2').style="color: white;"
