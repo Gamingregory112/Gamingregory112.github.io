@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <style> 
-        a{ 
+       #GameLinks a{ 
           text-decoration:none; 
           color:black; 
         } 
          
-        a:hover{ 
+       #GameLinks a:hover{ 
           text-decoration:underline; 
         } 
       </style> 
@@ -19,7 +19,7 @@
 <body id="BackgroundID" style="background-color: white;">
     <nav>
         <button onclick="LogOut()">🔓Log-Out🔓</button>
-        <div id="link>
+        <div id="GameLinks">
             <a href="Games/Proxy.html">Proxy</a>
             <a id="link1" href="Games/AmongUs.html">Among Us</a>
             <a id="link2" href="Games/DrawaPerfectCircle.html">Draw a Perfect Circle</a>
@@ -70,7 +70,7 @@
         var Mode = localStorage['Mode'];
         var ModeText = localStorage['ModeText'];
         document.getElementById('BackgroundID').style="background-color: "+Mode+";"
-        document.getElementById('link').style="color: "+ModeText+";"
+        document.getElementById('GameLinks').style="color: "+ModeText+";"
         document.getElementById('link0').style="color: "+ModeText+";"
         document.getElementById('link1').style="color: "+ModeText+";"
         document.getElementById('link2').style="color: "+ModeText+";"
