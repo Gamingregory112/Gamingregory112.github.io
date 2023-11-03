@@ -3,7 +3,7 @@ function getInfo() {
 	var ClientProxy = document.getElementById('code').value
 	let ServerProxy = atob(ServerProxyValue);
 	if(ClientProxy == ServerProxy) {
-		window.location = "Game-Index.html"
+		window.location = "games.html"
 		localStorage.setItem("ProxyStatus", "true")
 		localStorage.setItem("AlreadyProxy", "true")
 		return
