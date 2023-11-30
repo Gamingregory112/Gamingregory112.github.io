@@ -1,8 +1,6 @@
 var ServerProxyValue = ("MTIzNDU2Nzg5MGJvYg==");
 function getInfo() {
-	var ClientProxy = document.getElementById('code').value
-	let ServerProxy = atob(ServerProxyValue);
-	if(ClientProxy == ServerProxy) {
+	if(document.getElementById('code').value == atob(ServerProxyValue) {
 		window.location = "games.html"
 		localStorage.setItem("ProxyStatus", "true")
 		localStorage.setItem("AlreadyProxy", "true")
