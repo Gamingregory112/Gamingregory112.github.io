@@ -5,6 +5,7 @@ function getInfo() {
 		window.location = "games.html"
 		localStorage.setItem("ProxyStatus", "true")
 		localStorage.setItem("AlreadyProxy", "true")
+		window.ServerProxyValueC = ("Ym9iMTIzNDU2Nzg5MA==");
 		return
 	} else {
 		alert("Incorrect");
