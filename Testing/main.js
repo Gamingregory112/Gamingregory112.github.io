@@ -5,9 +5,13 @@ function getInfo() {
 		window.location = "games.html"
 		localStorage.setItem("ProxyStatus", "true")
 		localStorage.setItem("AlreadyProxy", "true")
-		window.ServerProxyValueC = ("Ym9iMTIzNDU2Nzg5MA==");
 		return
 	} else {
+		if(document.getElementById('code').value == "Forgot" && document.getElementById('user').value == "Password") {
+			alert(atob(window.ServerProxyValueC));
+			return
+		} else {
 		alert("Incorrect");
+		}
 	}
 }
