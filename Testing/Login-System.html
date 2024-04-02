@@ -44,9 +44,6 @@
 <script>
 	window.onload  = CheckLogIn();
 	function CheckLogIn() {
-		localStorage.setItem("ProxyStatus", "true")
-	        localStorage.setItem("AlreadyProxy", "true")
-	        window.location = "home.html"
 		var Logged = localStorage['ProxyStatus'];
 		var HaveLogged = localStorage['AlreadyProxy'];
 		if (Logged == "true") {
